@@ -9,11 +9,7 @@
   font-weight: normal;
   font-style: normal;
 }
-/* =======================================================
-*
-* 	Template Style 
-*
-* ======================================================= */
+
 body {
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
@@ -58,7 +54,7 @@ li{
 }
 
 a {
-  color: #0c9cee;
+  color: #f35f55;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -82,7 +78,7 @@ h4,
 h5,
 h6,
 figure {
-  color: #000;
+  color: #f35f55;
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
@@ -515,7 +511,7 @@ figure {
 #fh5co-counter .counter {
   font-size: 50px;
   margin-bottom: 10px;
-  color: #0c9cee;
+  color: #f35f55;
   font-weight: 100;
   display: block;
 }
@@ -604,7 +600,6 @@ figure {
   padding: 0;
   opacity: 0;
   font-size: 20px;
-  font-weight: 300;
   visibility: hidden;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -612,6 +607,8 @@ figure {
 }
 @media screen and (max-width: 768px) {
   #fh5co-project .fh5co-project > a h3 {
+    right: 0;
+    left: 0;
     position: relative;
     visibility: visible;
     opacity: 1;
@@ -809,7 +806,7 @@ figure {
 }
 .feature-center h3 {
   font-size: 22px;
-  color: #5d5d5d;
+  color: #f35f55;
 }
 
 .project-grid {
@@ -979,7 +976,7 @@ figure {
   margin-bottom: 20px;
   line-height: 1.5;
   font-weight: 300;
-  color: #000;
+  color: #0c9cee;
 }
 .fh5co-heading p {
   font-size: 18px;

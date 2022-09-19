@@ -21,7 +21,7 @@
 
 	};
 	let moveDot = function() {
-		$(document).click(function (e) {
+		$('.nav-item-container').click(function (e) {
 			$('.active')
 			.removeClass('active');
 			$(e.target)

@@ -44,7 +44,7 @@
 		$('#fh5co-offcanvas')
 			.find('li')
 			.removeClass('has-dropdown');
-
+		document.Get
 		$('.offcanvas-has-dropdown').mouseenter(function(){
 			let $this = $(this);
 

@@ -22,7 +22,7 @@
 	};
 	let moveDot = function() {
 		$(document).click(function (e) {
-			$('li')
+			$('.active')
 			.removeClass('active');
 			$(e.target)
 				.parent()

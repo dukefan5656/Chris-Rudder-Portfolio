@@ -20,7 +20,16 @@
 		});
 
 	};
-
+	let moveDot = function() {
+		$(document).click(function (e) {
+			$('li')
+			.removeClass('active');
+			$(e.target)
+				.parent()
+				.addClass('active');
+				console.log(e.target);
+		});
+	};
 
 	let offcanvasMenu = function() {
 
@@ -36,7 +45,6 @@
 			.find('li')
 			.removeClass('has-dropdown');
 
-		// Hover dropdown menu on mobile
 		$('.offcanvas-has-dropdown').mouseenter(function(){
 			let $this = $(this);
 
@@ -170,8 +178,6 @@
 	
 	};
 
-
-	// Loading page
 	let loaderPage = function() {
 		$(".fh5co-loader").fadeOut("slow");
 	};
@@ -198,6 +204,7 @@
 
 	
 	$(function(){
+		moveDot();
 		mobileMenuOutsideClick();
 		offcanvasMenu();
 		burgerMenu();

@@ -104,14 +104,13 @@ figure {
 }
 
 .fh5co-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   margin: 0;
-  padding: 0;
   width: 100%;
-  padding: 40px 0;
+  padding: 10px 0 20px 0;
   z-index: 1001;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav {
@@ -120,7 +119,7 @@ figure {
 }
 .fh5co-nav #fh5co-logo {
   font-size: 24px;
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
   padding: 0;
   text-transform: uppercase;
   font-weight: bold;
@@ -153,8 +152,9 @@ figure {
   display: inline;
 }
 .fh5co-nav ul li a {
+  position: relative;
   font-size: 16px;
-  padding: 30px 10px;
+  padding: 20px 10px 10px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: 0.5s;
@@ -198,12 +198,10 @@ figure {
 .fh5co-nav ul li.active > a:before {
   position: absolute;
   content: "";
+  top: 0;
   width: 8px;
   height: 8px;
-  top: 0;
-  margin-top: 0px;
   left: 50%;
-  margin-left: -4px;
   background: #f35f55;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

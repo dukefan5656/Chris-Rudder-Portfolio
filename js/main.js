@@ -31,6 +31,45 @@
 		});
 	};
 
+	let sendEmail = function(message, subject){
+		Email.send({
+			Host: 'smtp.gmail.com', 
+			Username: 'cbrudder84@gmail.com',
+			Password: 'qscjghobbrmnexbd',
+			To: 'cbrudder84@gmail.com',
+			From: 'cbrudder84@gmail.com',
+			Subject: `${subject}`,
+			Body: `${message}`
+		}).then( () => alert("Your message has been sent successfully!"));
+	};
+
+	let submitForm = function(){
+		$('.btn-primary').click(function(e){
+			let info = $('form').serializeArray();
+			let infoObj = {};
+			$(info).each(function(i, field){
+				infoObj[field.name] = field.value;
+			});
+			console.log(infoObj);
+			let name = (infoObj.firstName + " " + infoObj.lastName);
+			let subject = infoObj.subject;
+			let email = infoObj.email;
+			let message = infoObj.message;
+			console.log(subject + " " + email + " " + message)
+
+			sendEmail(email, message, subject);
+			// for(let i = 0; i < info.length; i++){
+			// 	infoArray = Object.values(info[i].value);
+				
+			// };
+			//console.log(infoArray);
+			//console.log(info);
+			//sendEmail()
+			//document.querySelector(".contact-form").reset();
+			//alert("Your message has been sent successfully!");
+		});
+	};
+
 	let offcanvasMenu = function() {
 
 		$('#page').prepend('<div id="fh5co-offcanvas" />');
@@ -213,6 +252,7 @@
 		goToTop();
 		loaderPage();
 		counterWayPoint();
+		submitForm();
 	});
 
 

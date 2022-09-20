@@ -41,7 +41,10 @@
 			From: 'dukefan5656@yahoo.com',
 			Subject: `${subject}`,
 			Body: `${message}`
-		}).then((message) => alert(message));
+		}).then((message) => alert(message))
+		.then(() => {
+			document.querySelector(".contact-form").reset();
+		});
 	};
 
 	let submitForm = function(){
@@ -66,8 +69,6 @@
 			//console.log(infoArray);
 			//console.log(info);
 			//sendEmail()
-			//document.querySelector(".contact-form").reset();
-			//alert("Your message has been sent successfully!");
 		});
 	};
 

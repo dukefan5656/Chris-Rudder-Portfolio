@@ -33,14 +33,15 @@
 
 	let sendEmail = function(message, subject){
 		Email.send({
-			Host: 'smtp.gmail.com', 
-			Username: 'cbrudder84@gmail.com',
-			Password: 'qscjghobbrmnexbd',
-			To: 'cbrudder84@gmail.com',
-			From: 'cbrudder84@gmail.com',
+			Host: 'smtp.elasticemail.com', 
+			Port: '2525',
+			Username: 'dukefan5656@yahoo.com',
+			Password: '54BC44E30B3E7D003DB6A9E50D16820871F1',
+			To: 'dukefan5656@yahoo.com',
+			From: 'dukefan5656@yahoo.com',
 			Subject: `${subject}`,
 			Body: `${message}`
-		}).then( () => alert("Your message has been sent successfully!"));
+		}).then((message) => alert(message));
 	};
 
 	let submitForm = function(){
@@ -57,7 +58,7 @@
 			let message = infoObj.message;
 			console.log(subject + " " + email + " " + message)
 
-			sendEmail(email, message, subject);
+			sendEmail(message, subject);
 			// for(let i = 0; i < info.length; i++){
 			// 	infoArray = Object.values(info[i].value);
 				

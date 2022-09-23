@@ -279,7 +279,6 @@
 		goToTop();
 		loaderPage();
 		counterWayPoint();
-		submitForm();
 	});
 
 

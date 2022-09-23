@@ -320,6 +320,10 @@ figure {
   .fh5co-cover {
     height: 600px;
   }
+  @media screen and (max-width: 768px) {
+    .fh5co-nav a {
+      font-size: 40px;
+    }
 }
 .fh5co-cover .display-t,
 .fh5co-cover .display-tc {

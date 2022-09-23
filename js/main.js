@@ -58,9 +58,11 @@
 				console.log(response.photos);
 				$('#previous').removeClass('hidden');
 				$('#nasa-photos').attr("src", response.photos[data].img_src);
+				$('#nasa-photos').attr('data-photo', data);
 			});
 			$('#previous').click(function(){
 				data --;
+				$('#nasa-photos').attr('data-photo', data);
 				if(data <= 0){
 					$('#previous').addClass('hidden');
 				}
@@ -264,7 +266,7 @@
 			$('#fh5co-counter').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-					setTimeout( counter , 400);					
+					setTimeout( counter , 800);					
 					$(this.element).addClass('animated');
 				}
 			} , { offset: '90%' } );

@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "chris-rudder-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dukefan5656/Chris-Rudder-Portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dukefan5656/Chris-Rudder-Portfolio/issues"
+  },
+  "homepage": "https://github.com/dukefan5656/Chris-Rudder-Portfolio#readme",
+  "description": ""
+}

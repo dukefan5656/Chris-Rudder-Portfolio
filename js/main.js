@@ -31,20 +31,46 @@
 		});
 	};
 
-	let sendEmail = function(message, subject){
+	let sendEmail = function(email, message, subject){
 		Email.send({
-			Host: 'smtp.elasticemail.com', 
-			Port: '2525',
-			Username: 'dukefan5656@yahoo.com',
-			Password: '54BC44E30B3E7D003DB6A9E50D16820871F1',
-			To: 'dukefan5656@yahoo.com',
-			From: 'dukefan5656@yahoo.com',
+			Host: 'smtp-relay.gmail.com', 
+			Username: 'cbrudder84',
+			Password: 'wxxzylesxdxzdssl',
+			To: 'cbrudder84@gmail.com',
+			From: 'cbrudder84@gmail.com',
 			Subject: `${subject}`,
 			Body: `${message}`
-		}).then((message) => alert(message))
-		.then(() => {
-			document.querySelector(".contact-form").reset();
-		});
+		}).then((message) => alert(message));
+	};
+
+	let getNasaPhotos = function(){
+		let data = $('#nasa-photos').attr("data-photo");
+		
+		fetch(('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=NAVCAM&page=1&api_key=LQNgQpJSDa2EcVfC43RUZpJAiXFmQWh3zPBcQZ1G'),
+		{
+			method: 'GET'
+		})
+		.then(function(response){
+			return response.json();
+		}).then(function(response){
+			$('#next').click(function(){
+				data ++;
+				console.log(response.photos);
+				$('#nasa-photos').attr("src", response.photos[data].img_src);
+			});
+			$('#previous').click(function(){
+				data --;
+				console.log(data);
+				$('#nasa-photos').attr("src", response.photos[data].img_src);
+			});
+
+			
+			$('#nasa-photos').attr("src", response.photos[data].img_src);
+			
+		})
+		.catch((error) =>{
+			console.log(error);
+		})
 	};
 
 	let submitForm = function(){
@@ -59,9 +85,8 @@
 			let subject = infoObj.subject;
 			let email = infoObj.email;
 			let message = infoObj.message;
-			console.log(subject + " " + email + " " + message)
 
-			sendEmail(message, subject);
+			sendEmail(email, message, subject);
 			// for(let i = 0; i < info.length; i++){
 			// 	infoArray = Object.values(info[i].value);
 				
@@ -69,13 +94,15 @@
 			//console.log(infoArray);
 			//console.log(info);
 			//sendEmail()
+			//document.querySelector(".contact-form").reset();
+			//alert("Your message has been sent successfully!");
 		});
 	};
 
 	let offcanvasMenu = function() {
 
-		$('#page').prepend('<div id="fh5co-offcanvas" />');
-		$('#page').prepend('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>');
+		$('header').append('<div id="fh5co-offcanvas" />');
+		$('header').append('<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle fh5co-nav-white"><i></i></a>');
 		let clone1 = $('.menu-1 > ul').clone();
 		$('#fh5co-offcanvas').append(clone1);
 		let clone2 = $('.menu-2 > ul').clone();
@@ -117,7 +144,7 @@
 
 	let burgerMenu = function() {
 
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+		$('body').on('click', '.js-fh5co-nav-toggle, .nav-item-container li', function(event){
 			let $this = $(this);
 
 
@@ -126,8 +153,8 @@
 			} else {
 				$('body').addClass('overflow offcanvas');
 			}
-			$this.toggleClass('active');
-			event.preventDefault();
+			//$this.toggleClass('active');
+			//event.preventDefault();
 
 		});
 	};
@@ -245,6 +272,7 @@
 
 	
 	$(function(){
+		getNasaPhotos();
 		moveDot();
 		mobileMenuOutsideClick();
 		offcanvasMenu();

@@ -70,31 +70,31 @@
 		})
 	};
 
-	let submitForm = function(){
-		$('.btn-primary').click(function(e){
-			let info = $('form').serializeArray();
-			let infoObj = {};
-			$(info).each(function(i, field){
-				infoObj[field.name] = field.value;
-			});
-			console.log(infoObj);
-			let name = (infoObj.firstName + " " + infoObj.lastName);
-			let subject = infoObj.subject;
-			let email = infoObj.email;
-			let message = infoObj.message;
+	// let submitForm = function(){
+	// 	$('.btn-primary').click(function(e){
+	// 		let info = $('form').serializeArray();
+	// 		let infoObj = {};
+	// 		$(info).each(function(i, field){
+	// 			infoObj[field.name] = field.value;
+	// 		});
+	// 		console.log(infoObj);
+	// 		let name = (infoObj.firstName + " " + infoObj.lastName);
+	// 		let subject = infoObj.subject;
+	// 		let email = infoObj.email;
+	// 		let message = infoObj.message;
 
-			sendEmail(email, message, subject);
-			// for(let i = 0; i < info.length; i++){
-			// 	infoArray = Object.values(info[i].value);
+	// 		sendEmail(email, message, subject);
+	// 		// for(let i = 0; i < info.length; i++){
+	// 		// 	infoArray = Object.values(info[i].value);
 				
-			// };
-			//console.log(infoArray);
-			//console.log(info);
-			//sendEmail()
-			//document.querySelector(".contact-form").reset();
-			//alert("Your message has been sent successfully!");
-		});
-	};
+	// 		// };
+	// 		//console.log(infoArray);
+	// 		//console.log(info);
+	// 		//sendEmail()
+	// 		//document.querySelector(".contact-form").reset();
+	// 		//alert("Your message has been sent successfully!");
+	// 	});
+	// };
 
 	let offcanvasMenu = function() {
 

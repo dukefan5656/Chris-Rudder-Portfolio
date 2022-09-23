@@ -1355,6 +1355,31 @@ figure {
   transform: rotateZ(-45deg);
 }
 
+#nasa-photos{
+  height:40em;
+}
+
+#previous{
+  margin-top: 30px;
+  background-color: #f35f55;
+}
+
+#next{
+  margin-top: 30px;
+  background-color:#f35f55;
+}
+
+.photo-button-container{
+  justify-content: space-around !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#previous, #next {
+  display: inline-block;
+}
+
 .fh5co-nav-toggle {
   position: fixed;
   right: 0px;

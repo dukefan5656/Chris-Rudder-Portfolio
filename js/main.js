@@ -31,17 +31,17 @@
 		});
 	};
 
-	let sendEmail = function(email, message, subject){
-		Email.send({
-			Host: 'smtp-relay.gmail.com', 
-			Username: 'cbrudder84',
-			Password: 'wxxzylesxdxzdssl',
-			To: 'cbrudder84@gmail.com',
-			From: 'cbrudder84@gmail.com',
-			Subject: `${subject}`,
-			Body: `${message}`
-		}).then((message) => alert(message));
-	};
+	// let sendEmail = function(email, message, subject){
+	// 	Email.send({
+	// 		Host: 'smtp-relay.gmail.com', 
+	// 		Username: 'cbrudder84',
+	// 		Password: 'wxxzylesxdxzdssl',
+	// 		To: 'cbrudder84@gmail.com',
+	// 		From: 'cbrudder84@gmail.com',
+	// 		Subject: `${subject}`,
+	// 		Body: `${message}`
+	// 	}).then((message) => alert(message));
+	// };
 
 	let getNasaPhotos = function(){
 		let data = $('#nasa-photos').attr("data-photo");
@@ -62,11 +62,8 @@
 				data --;
 				console.log(data);
 				$('#nasa-photos').attr("src", response.photos[data].img_src);
-			});
-
-			
-			$('#nasa-photos').attr("src", response.photos[data].img_src);
-			
+			});			
+			$('#nasa-photos').attr("src", response.photos[data].img_src);			
 		})
 		.catch((error) =>{
 			console.log(error);

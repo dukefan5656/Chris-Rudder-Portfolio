@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/style.css" />
     
+    <script src="/path/to/flickity.pkgd.min.js"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
@@ -64,9 +65,9 @@
                   <a href="#fh5co-services">ABOUT</a>
                 </li>
 
-                <li><a href="#fh5co-project">Work</a></li>
-                <li><a href="#fh5co-counter">Fun Facts</a></li>
-                <li><a href="#fh5co-contact">Contact</a></li>
+                <li><a href="#fh5co-project">WORK</a></li>
+                <li><a href="#fh5co-counter">FUN FACTS</a></li>
+                <li><a href="#fh5co-contact">CONTACT</a></li>
               </ul>
             </div>
           </div>
@@ -108,6 +109,13 @@
 										If you want to build a ship, don’t drum up the men to gather wood, divide the work and give orders. Instead, teach them to yearn for the vast and endless sea.
 										<br>— Antoine de Saint-Exupéry
                 </p>
+              </div>
+              <div class="gallery js-flickity">
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
+                <div class="gallery-cell"></div>
               </div>
             </div>
           </div>
@@ -273,18 +281,24 @@
           </div>
         </div>
       </section>
+  
 
       <section role="region" id="fh5co-counter">
+        <br><br><br><br>
         <div class="container">
           <div class="row animate-box" data-animate-effect="fadeInUp">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <h2>NASA MARS PHOTOS</h2>
+              <p>No matter where you are, you can always look up at the sky to find curiosity. I have always had a love for astronomy and 
+                astrophyics; below is a photo gallery accessed through the NASA API that displays current navigation photos 
+                from the curiosity rover.
+              </p>
             </div>
           </div>
           <img id="nasa-photos" src="" data-photo="0">
 
             <div class="photo-button-container">
-              <button id="previous" class="btn btn-primary">Previous Photo</button>
+              <button id="previous" class="btn btn-primary hidden">Previous Photo</button>
               <button id="next" class="btn btn-primary">Next Photo</button>
             </div>
           </div>
@@ -420,10 +434,9 @@
                   <li class="phone">
                     <a>Please send email, robo calls = evil</a>
                   </li>
-                  <li class="email">
-                    <a href=""
-                      >cbrudder84@gmail.com</a
-                    >
+                  <li class="phone">
+                    <a href="mailto:cbrudder84@gmail.com"
+                      >cbrudder84@gmail.com</a>
                   </li>
                   <li class="url">
                     <a href="https://www.github.com/dukefan5656">Github</a>
@@ -436,12 +449,11 @@
             </div>
             <div class="col-md-6 animate-box">
               <h3>Get In Touch</h3>
-              <h1>Elegant Contact Form</h1>
-              <form class="cf" action="https://formsubmit.co/cbrudder84@gmail.com" method="POST">
+              <form method="POST" class="cf" action="http://formsubmit.co/5678ef881a8567a700df16533b9e98e0">
                 <div class="half left cf">
                   <input type="text" id="input-name" name="name" placeholder="Name">
-                  <input type="email" id="input-email" name="email" placeholder="Email address">
-                  <input type="text" id="input-subject" name="subject" placeholder="Subject">
+                  <!-- <input type="email" id="input-email" name="email" placeholder="Email address"> -->
+                  <input type="text" id="input-subject" placeholder="Subject">
                 </div>
                 <div class="half right cf">
                   <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>

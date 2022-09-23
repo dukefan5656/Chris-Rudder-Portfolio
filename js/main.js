@@ -14,15 +14,14 @@
     			$('.js-fh5co-nav-toggle').removeClass('active');
 				
 	    	}
-	    
-	    	
 	    }
 		});
+
 
 	};
 	let moveDot = function() {
 		$('.nav-item-container').click(function (e) {
-			$('.active')
+			$('.col-xs-12 .active')
 			.removeClass('active');
 			$(e.target)
 				.parent()
@@ -46,21 +45,26 @@
 	let getNasaPhotos = function(){
 		let data = $('#nasa-photos').attr("data-photo");
 		
-		fetch(('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=NAVCAM&page=1&api_key=LQNgQpJSDa2EcVfC43RUZpJAiXFmQWh3zPBcQZ1G'),
+		fetch(('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=100&camera=NAVCAM&page=1&api_key=LQNgQpJSDa2EcVfC43RUZpJAiXFmQWh3zPBcQZ1G'),
 		{
 			method: 'GET'
 		})
 		.then(function(response){
 			return response.json();
 		}).then(function(response){
+			
 			$('#next').click(function(){
 				data ++;
 				console.log(response.photos);
+				$('#previous').removeClass('hidden');
 				$('#nasa-photos').attr("src", response.photos[data].img_src);
 			});
 			$('#previous').click(function(){
 				data --;
-				console.log(data);
+				if(data <= 0){
+					$('#previous').addClass('hidden');
+				}
+				console.log(response.photos);
 				$('#nasa-photos').attr("src", response.photos[data].img_src);
 			});			
 			$('#nasa-photos').attr("src", response.photos[data].img_src);			
